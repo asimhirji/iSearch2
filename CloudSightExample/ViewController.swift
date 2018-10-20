@@ -80,7 +80,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     func createUrlRequest(
         data:NSData) -> URLRequest {
         
-        let url: NSURL = NSURL(string: "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr?language=en")!
+        let url: NSURL = NSURL(string: "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze?language=en&visualFeatures=tags")!
         let request1: NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
         
         request1.httpMethod = "POST"
