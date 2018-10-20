@@ -77,32 +77,83 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         print("cloudSightQueryDidFinishUploading")
     }
     
+    func createUrlRequest(
+        data:NSData) -> URLRequest {
+        
+        let url: NSURL = NSURL(string: "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr?language=en")!
+        let request1: NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
+        
+        request1.httpMethod = "POST"
+        
+        let boundary = "looooooooool"
+        let fullData = photoDataToFormData(data: data,boundary:boundary,fileName:"image.jpeg")
+        
+        request1.setValue("dce9f46b13364b7fba1c1bcbdbe5f2b3",
+                          forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        
+        request1.setValue("multipart/form-data; boundary=" + boundary,
+                          forHTTPHeaderField: "Content-Type")
+        
+        
+        // REQUIRED!
+        request1.setValue(String(fullData.length), forHTTPHeaderField: "Content-Length")
+        
+        request1.httpBody = fullData as Data
+        request1.httpShouldHandleCookies = false
+        
+        return request1 as URLRequest
+    }
+    
+    // this is a very verbose version of that function
+    // you can shorten it, but i left it as-is for clarity
+    // and as an example
+    func photoDataToFormData(data:NSData,boundary:String,fileName:String) -> NSData {
+        var fullData = NSMutableData()
+        
+        // 1 - Boundary should start with --
+        let lineOne = "--" + boundary + "\r\n"
+        fullData.append(lineOne.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+        
+        // 2
+        let lineTwo = "Content-Disposition: form-data; name=\"image\"; filename=\"" + fileName + "\"\r\n"
+        NSLog(lineTwo)
+        fullData.append(lineTwo.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+        
+        // 3
+        let lineThree = "Content-Type: image/jpg\r\n\r\n"
+        fullData.append(lineThree.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+        
+        // 4
+        fullData.append(data as Data)
+        
+        // 5
+        let lineFive = "\r\n"
+        fullData.append(lineFive.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+        
+        // 6 - The end. Notice -- at the start and at the end
+        let lineSix = "--" + boundary + "--\r\n"
+        fullData.append(lineSix.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+        
+        return fullData
+    }
+    
     func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
         print("cloudSightQueryDidFinishIdentifying")
         
-        let endpoint: String = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags"
-        let url = URL(string: endpoint)!
-        var urlRequest = URLRequest(url: url)
-        
-        urlRequest.addValue("c4fb3cdedd9e45769814d55914da9936", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        
-        urlRequest.httpMethod = "POST"
-        let payload: [String: Any] = ["url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Dining_table_for_two.jpg"]
-        let jsonPayload: Data
-        do {
-            jsonPayload = try JSONSerialization.data(withJSONObject: payload, options: [])
-            urlRequest.httpBody = jsonPayload
-            
-        } catch {
-            print("Error: cannot create JSON from payload")
-            return
-        }
+        let image :UIImage = UIImage(data: query.image!)!
+        let urlRequest = createUrlRequest(data: query.image! as NSData)
         
         let session = URLSession.shared
-        
-        print(urlRequest)
         
         
         let task = session.dataTask(with: urlRequest) {

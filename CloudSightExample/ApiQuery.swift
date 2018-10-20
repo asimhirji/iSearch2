@@ -17,41 +17,26 @@ extension NSMutableData {
 }
 
 class ApiQuery {
-    func CloudSightURLRequest(image: UIImage) -> URLRequest {
-        var r  = URLRequest(url: URL(string: "https://api.cloudsight.ai/v1/images")!)
+    static func AzureURLRequest(image: UIImage) -> URLRequest {
+        var r  = URLRequest(url: URL(string: "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr?language=en")!)
         r.httpMethod = "POST"
         let boundary = "Boundary-\(UUID().uuidString)"
         
         // Set headers
-        r.setValue("CloudSight C38_disOS8RllVk3OQ5cDw", forHTTPHeaderField: "Authorization")
+        r.setValue("dce9f46b13364b7fba1c1bcbdbe5f2b3", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
         r.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         // Set body
-        r.httpBody = NSMutableData()
-        r.httpBody.appendString("--" + boundary)
-        r.httpBody.appendString("Content-Disposition: form-data; name=\"image_request[image]\"; filename=\"image.jpg\"\r\n")
-        r.httpBody.appendString("Content-Type: image/jpeg\r\n\r\n")
-        r.httpBody.append(UIImageJPEGRepresentation(image, 1.0))
-        r.httpBody.appendString("\r\n")
-        r.httpBody.appendString("--" + boundary + "--")
-    }
-    
-    func AzureURLRequest(image: UIImage) -> URLRequest {
-        var r  = URLRequest(url: URL(string: "https://westus.api.cognitive.microsoft.com/vision/v2.0/ocr?language=en")!)
-        r.httpMethod = "POST"
-        let boundary = "Boundary-\(UUID().uuidString)"
+        let httpBody = NSMutableData()
+        httpBody.appendString("--" + boundary)
+        httpBody.appendString("Content-Disposition: form-data; name=\"image_request[image]\"; filename=\"image.jpg\"\r\n")
+        httpBody.appendString("Content-Type: image/jpeg\r\n\r\n")
+        httpBody.append(image.jpegData(compressionQuality: 0.9)!)
+        httpBody.appendString("\r\n")
+        httpBody.appendString("--" + boundary + "--")
         
-        // Set headers
-        r.setValue("c4fb3cdedd9e45769814d55914da9936", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
-        r.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        r.httpBody = httpBody as Data
         
-        // Set body
-        r.httpBody = NSMutableData()
-        r.httpBody.appendString("--" + boundary)
-        r.httpBody.appendString("Content-Disposition: form-data; name=\"image_request[image]\"; filename=\"image.jpg\"\r\n")
-        r.httpBody.appendString("Content-Type: image/jpeg\r\n\r\n")
-        r.httpBody.append(UIImageJPEGRepresentation(image, 1.0))
-        r.httpBody.appendString("\r\n")
-        r.httpBody.appendString("--" + boundary + "--")
+        return r
     }
 }

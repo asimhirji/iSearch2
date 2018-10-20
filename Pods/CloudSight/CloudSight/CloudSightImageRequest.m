@@ -132,8 +132,6 @@ NSString *const kTPImageRequestURL = @"https://api.cloudsightapi.com/image_reque
     [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     [request setValue:[NSString stringWithFormat:@"%u", (unsigned int)[body length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:body];
-    NSLog(@"%@", [request allHTTPHeaderFields]);
-    NSLog(@"%@", [request HTTPBody]);
     
     // Setup connection session
     NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
