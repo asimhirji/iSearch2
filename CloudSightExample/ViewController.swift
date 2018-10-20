@@ -57,12 +57,15 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         // Create JPG image data from UIImage
         let imageData = image.jpegData(compressionQuality: 0.8)
         
-        cloudsightQuery = CloudSightQuery(image: imageData,
+        /*cloudsightQuery = CloudSightQuery(image: imageData,
                                           atLocation: CGPoint.zero,
                                           withDelegate: self,
                                           atPlacemark: nil,
-                                          withDeviceId: "device-id")
-        cloudsightQuery.start()
+                                          withDeviceId: "device-id")*/
+        
+        
+        
+        //cloudsightQuery.start()
         activityIndicatorView.startAnimating()
     }
     
