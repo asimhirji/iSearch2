@@ -124,7 +124,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                                                                             print("Could not get JSON from responseData as dictionary")
                                                                             return
                 }
-                
+                //mark
                 // CloudSight runs in a background thread, and since we're only
                 // allowed to update UI in the main thread, let's make sure it does.
                 DispatchQueue.main.async {
