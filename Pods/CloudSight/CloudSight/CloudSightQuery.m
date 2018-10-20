@@ -42,6 +42,8 @@
         self.queryDelegate = delegate;
     }
     
+    self.image = image;
+    
     return self;
 }
 

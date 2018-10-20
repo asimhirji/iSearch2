@@ -44,6 +44,7 @@ static const int kTPQueryCancelledError = 9030;
 @property (nonatomic, retain) NSString *skipReason;
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic, retain) NSString *remoteUrl;
+@property (nonatomic, retain) NSData *image;
 
 - (id)initWithImage:(NSData *)image atLocation:(CGPoint)location withDelegate:(id)delegate atPlacemark:(CLLocation *)placemark withDeviceId:(NSString *)deviceId;
 - (void)cancelAndDestroy;

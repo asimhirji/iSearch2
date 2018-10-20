@@ -57,15 +57,15 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         // Create JPG image data from UIImage
         let imageData = image.jpegData(compressionQuality: 0.8)
         
-        /*cloudsightQuery = CloudSightQuery(image: imageData,
+        cloudsightQuery = CloudSightQuery(image: imageData,
                                           atLocation: CGPoint.zero,
                                           withDelegate: self,
                                           atPlacemark: nil,
-                                          withDeviceId: "device-id")*/
+                                          withDeviceId: "device-id")
         
         
         
-        //cloudsightQuery.start()
+        cloudsightQuery.start()
         activityIndicatorView.startAnimating()
     }
     
@@ -79,13 +79,70 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
         print("cloudSightQueryDidFinishIdentifying")
-
-        // CloudSight runs in a background thread, and since we're only
-        // allowed to update UI in the main thread, let's make sure it does.
-        DispatchQueue.main.async {
-            self.resultLabel.text = query.name()
-            self.activityIndicatorView.stopAnimating()
+        
+        let endpoint: String = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Description,Tags"
+        let url = URL(string: endpoint)!
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.addValue("c4fb3cdedd9e45769814d55914da9936", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        
+        urlRequest.httpMethod = "POST"
+        let payload: [String: Any] = ["url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Dining_table_for_two.jpg"]
+        let jsonPayload: Data
+        do {
+            jsonPayload = try JSONSerialization.data(withJSONObject: payload, options: [])
+            urlRequest.httpBody = jsonPayload
+            
+        } catch {
+            print("Error: cannot create JSON from payload")
+            return
         }
+        
+        let session = URLSession.shared
+        
+        print(urlRequest)
+        
+        
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) in
+            guard error == nil else {
+                print("error calling POST on Azure's Computer Vision API")
+                print(error!)
+                return
+            }
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return
+            }
+            
+            // parse the result as JSON, since that's what the API provides
+            do {
+                guard let analyzedData = try JSONSerialization.jsonObject(with: responseData,
+                                                                          options: []) as? [String: Any] else {
+                                                                            print("Could not get JSON from responseData as dictionary")
+                                                                            return
+                }
+                
+                // CloudSight runs in a background thread, and since we're only
+                // allowed to update UI in the main thread, let's make sure it does.
+                DispatchQueue.main.async {
+                    //self.resultLabel.text = query.name()
+                    print("CloudSight API result:")
+                    print(query.name())
+                    print("Azure API result:")
+                    print(analyzedData)
+                    self.activityIndicatorView.stopAnimating()
+                }
+                
+            } catch  {
+                print("error parsing response from POST on /todos")
+                return
+            }
+        }
+        task.resume()
+        
     }
     
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
