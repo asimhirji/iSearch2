@@ -93,7 +93,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         request1.httpMethod = "POST"
         
-        let boundary = "looooooooool"
+        let boundary = "byte-data-separator"
         let fullData = photoDataToFormData(data: data,boundary:boundary,fileName:"image.jpeg")
         
         request1.setValue("dce9f46b13364b7fba1c1bcbdbe5f2b3",
