@@ -803,6 +803,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		05BEE17C968BD82BC86A2A5F489A13D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D0A4F4CE2B9DAF712A0EBDB026092D /* CloudSight.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CloudSight/CloudSight-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CloudSight/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CloudSight/CloudSight.modulemap";
+				PRODUCT_MODULE_NAME = CloudSight;
+				PRODUCT_NAME = CloudSight;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		20CE83884EAB9F538F10EC6C59F688AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E54BDAF4B3D697D0530FC06BBA7FEAB1 /* Pods-CloudSightExampleUITests.debug.xcconfig */;
@@ -931,7 +963,7 @@
 			};
 			name = Release;
 		};
-		5DA97009909838A6583750BD5072A8C2 /* Debug */ = {
+		651F10DE0FA4945FC6E4323BE935F68D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F352466F239BB520E683BAFF81FE94DC /* RequestUtils.xcconfig */;
 			buildSettings = {
@@ -955,12 +987,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		6C31C3E2D9F62F53459E01758EE54116 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1094,7 +1127,7 @@
 			};
 			name = Debug;
 		};
-		A3AEEEBE136E1AFE020A888023F7E80A /* Debug */ = {
+		8668A358081FBB567CDBDD04BA356873 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48AD56B2DAAC3EA0EF870FCC2AA63365 /* BFOAuth.xcconfig */;
 			buildSettings = {
@@ -1118,14 +1151,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		A3E09BEB0974D1B719512CF15B370711 /* Release */ = {
+		A36F10CB27A65F2A1A2591939B025B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F352466F239BB520E683BAFF81FE94DC /* RequestUtils.xcconfig */;
 			buildSettings = {
@@ -1149,15 +1183,45 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		A9CEDC3FC6C35C2D6DE8C396E6CA340C /* Debug */ = {
+		C16AE9068E3C8E012162928D9804C1DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48AD56B2DAAC3EA0EF870FCC2AA63365 /* BFOAuth.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BFOAuth/BFOAuth-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BFOAuth/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BFOAuth/BFOAuth.modulemap";
+				PRODUCT_MODULE_NAME = BFOAuth;
+				PRODUCT_NAME = BFOAuth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C5F0074BAD61636D23805C7F812F8A71 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0D0A4F4CE2B9DAF712A0EBDB026092D /* CloudSight.xcconfig */;
 			buildSettings = {
@@ -1181,7 +1245,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1216,70 +1280,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CECE7F49801A32C5F45D8DBFC9FCBE1C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48AD56B2DAAC3EA0EF870FCC2AA63365 /* BFOAuth.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BFOAuth/BFOAuth-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BFOAuth/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BFOAuth/BFOAuth.modulemap";
-				PRODUCT_MODULE_NAME = BFOAuth;
-				PRODUCT_NAME = BFOAuth;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D02C0DBE20E3AA93CFE76AD9F03F6B35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0D0A4F4CE2B9DAF712A0EBDB026092D /* CloudSight.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CloudSight/CloudSight-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CloudSight/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CloudSight/CloudSight.modulemap";
-				PRODUCT_MODULE_NAME = CloudSight;
-				PRODUCT_NAME = CloudSight;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1328,8 +1328,8 @@
 		2134BEF3528276A6ACDE5D633D26DD07 /* Build configuration list for PBXNativeTarget "BFOAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3AEEEBE136E1AFE020A888023F7E80A /* Debug */,
-				CECE7F49801A32C5F45D8DBFC9FCBE1C /* Release */,
+				C16AE9068E3C8E012162928D9804C1DC /* Debug */,
+				8668A358081FBB567CDBDD04BA356873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1346,8 +1346,8 @@
 		4782853BA5D6CBBABDB221348FE28BF7 /* Build configuration list for PBXNativeTarget "RequestUtils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5DA97009909838A6583750BD5072A8C2 /* Debug */,
-				A3E09BEB0974D1B719512CF15B370711 /* Release */,
+				A36F10CB27A65F2A1A2591939B025B8B /* Debug */,
+				651F10DE0FA4945FC6E4323BE935F68D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1364,8 +1364,8 @@
 		B0809618238B8766143F2C70FA1ACAC0 /* Build configuration list for PBXNativeTarget "CloudSight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9CEDC3FC6C35C2D6DE8C396E6CA340C /* Debug */,
-				D02C0DBE20E3AA93CFE76AD9F03F6B35 /* Release */,
+				C5F0074BAD61636D23805C7F812F8A71 /* Debug */,
+				05BEE17C968BD82BC86A2A5F489A13D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

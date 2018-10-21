@@ -27,6 +27,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    struct Tag: Decodable {
+        let confidence: String
+        let name: String
+    }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
 
@@ -48,7 +53,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
+        self.resultLabel.text = ""
         // Dismiss the UIImagePickerController
         self.dismiss(animated: true, completion: nil)
         
@@ -68,8 +73,8 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         
         cloudsightQuery.start()
-        activityIndicatorView.startAnimating()
         submitButton.isHidden = true
+        activityIndicatorView.startAnimating()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -187,7 +192,19 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     print(query.name())
                     print("Azure API result:")
                     print(analyzedData)
+                    
+                    var label : String = query.name()
+                    
+                    for tag in analyzedData["tags"] as! [Any] {
+                        print("TAAAG")
+                        let parsedTag = tag as! NSDictionary
+                        if (parsedTag["confidence"] as! Float) >= 0.99 {
+                            label += ", " + (parsedTag["name"] as! String)
+                        }
+                        }
+                    
                     self.activityIndicatorView.stopAnimating()
+                    self.resultLabel.text = label
                     self.submitButton.isHidden = false
                     
                 }
