@@ -9,21 +9,25 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UINavigationControllerDelegate {
 
     
     @IBOutlet weak var webView: WKWebView!
+    var queryTerms: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let baseURLString = "https://www.homedepot.com/"
+        let baseURLString = "https://www.homedepot.com/s/" + queryTerms.replacingOccurrences(of: ",", with: "").replacingOccurrences(of: " ", with: "%2520")
         //let PostURLString
         
-        //let url = URL(string: baseURLString + PostURLString)
-        //let URLRequest = URLRequest(url: url)
-        //webView.loadRequest(URLRequest)
+        print("PRINT QUERY TERMS")
+        print(queryTerms)
+        
+        let url = URL(string: baseURLString)
+        let urlRequest = URLRequest(url: url!)
+        webView.load(urlRequest)
         
         
     }

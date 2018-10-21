@@ -221,6 +221,17 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
         print("CloudSight Failure: \(error)")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is WebViewController
+        {
+            let vc = segue.destination as? WebViewController
+            vc?.queryTerms = self.resultLabel.text!
+            print("SEND TO WVC")
+            print(self.resultLabel.text!)
+        }
+    }
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
