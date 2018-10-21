@@ -195,11 +195,14 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     
                     var label : String = query.name()
                     
+                    var count = 1
+                    
                     for tag in analyzedData["tags"] as! [Any] {
                         print("TAAAG")
                         let parsedTag = tag as! NSDictionary
-                        if (parsedTag["confidence"] as! Float) >= 0.99 {
+                        if (parsedTag["confidence"] as! Float) >= 0.99 && count <= 3 {
                             label += ", " + (parsedTag["name"] as! String)
+                            count = count + 1
                         }
                         }
                     
