@@ -2,7 +2,6 @@
 //  ViewController.swift
 //  CloudSightExample
 //
-
 import UIKit
 import CloudSight
 
@@ -10,9 +9,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var submitButton: UIButton!
+    
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var cloudsightQuery: CloudSightQuery!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,7 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         cloudsightQuery.start()
         activityIndicatorView.startAnimating()
+        submitButton.isHidden = true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -185,6 +188,8 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     print("Azure API result:")
                     print(analyzedData)
                     self.activityIndicatorView.stopAnimating()
+                    self.submitButton.isHidden = false
+                    
                 }
                 
             } catch  {
@@ -199,7 +204,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     func cloudSightQueryDidFail(_ query: CloudSightQuery!, withError error: Error!) {
         print("CloudSight Failure: \(error)")
     }
-}
 
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
@@ -209,4 +213,5 @@ fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [U
 // Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
+}
 }

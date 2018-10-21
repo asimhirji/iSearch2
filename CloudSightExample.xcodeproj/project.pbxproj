@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00062F4F217C17F5004045EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00062F4E217C17F5004045EF /* HomeViewController.swift */; };
+		00062F51217C1979004045EF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00062F50217C1979004045EF /* File.swift */; };
+		00062F53217C1A7A004045EF /* blink.gif in Resources */ = {isa = PBXBuildFile; fileRef = 00062F52217C1A7A004045EF /* blink.gif */; };
+		00062F55217C1FAC004045EF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00062F54217C1FAC004045EF /* WebViewController.swift */; };
 		140FCD1095182DD8E55BD95F /* Pods_CloudSightExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3065D4DD2E8BC831F71FD2 /* Pods_CloudSightExample.framework */; };
 		2F53B372217A6BCA005992C7 /* ApiQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F53B371217A6BCA005992C7 /* ApiQuery.swift */; };
 		3DD7AAA7CFEA7C9E0CC3B1E6 /* Pods_CloudSightExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EB6714EF6AE4CB25C5D7AF /* Pods_CloudSightExampleTests.framework */; };
@@ -14,7 +18,6 @@
 		67FEB2861E7DCB290035AE4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FEB2851E7DCB290035AE4B /* ViewController.swift */; };
 		67FEB2891E7DCB290035AE4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67FEB2871E7DCB290035AE4B /* Main.storyboard */; };
 		67FEB28B1E7DCB290035AE4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67FEB28A1E7DCB290035AE4B /* Assets.xcassets */; };
-		67FEB28E1E7DCB290035AE4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67FEB28C1E7DCB290035AE4B /* LaunchScreen.storyboard */; };
 		67FEB2991E7DCB290035AE4B /* CloudSightExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FEB2981E7DCB290035AE4B /* CloudSightExampleTests.swift */; };
 		67FEB2A41E7DCB290035AE4B /* CloudSightExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FEB2A31E7DCB290035AE4B /* CloudSightExampleUITests.swift */; };
 		80F395E7F75C6C0215594B1B /* Pods_CloudSightExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A61EAE98329535440E443667 /* Pods_CloudSightExampleUITests.framework */; };
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00062F4E217C17F5004045EF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		00062F50217C1979004045EF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		00062F52217C1A7A004045EF /* blink.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = blink.gif; path = ../../blink.gif; sourceTree = "<group>"; };
+		00062F54217C1FAC004045EF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		04EB6714EF6AE4CB25C5D7AF /* Pods_CloudSightExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudSightExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5523F4D1EE9BABB573A0BF /* Pods-CloudSightExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudSightExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CloudSightExampleUITests/Pods-CloudSightExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F3065D4DD2E8BC831F71FD2 /* Pods_CloudSightExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudSightExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +56,6 @@
 		67FEB2851E7DCB290035AE4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		67FEB2881E7DCB290035AE4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67FEB28A1E7DCB290035AE4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		67FEB28D1E7DCB290035AE4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67FEB28F1E7DCB290035AE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67FEB2941E7DCB290035AE4B /* CloudSightExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudSightExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67FEB2981E7DCB290035AE4B /* CloudSightExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSightExampleTests.swift; sourceTree = "<group>"; };
@@ -126,13 +132,16 @@
 		67FEB2821E7DCB290035AE4B /* CloudSightExample */ = {
 			isa = PBXGroup;
 			children = (
+				00062F52217C1A7A004045EF /* blink.gif */,
 				67FEB2831E7DCB290035AE4B /* AppDelegate.swift */,
 				67FEB2851E7DCB290035AE4B /* ViewController.swift */,
 				67FEB2871E7DCB290035AE4B /* Main.storyboard */,
 				67FEB28A1E7DCB290035AE4B /* Assets.xcassets */,
-				67FEB28C1E7DCB290035AE4B /* LaunchScreen.storyboard */,
 				67FEB28F1E7DCB290035AE4B /* Info.plist */,
 				2F53B371217A6BCA005992C7 /* ApiQuery.swift */,
+				00062F4E217C17F5004045EF /* HomeViewController.swift */,
+				00062F54217C1FAC004045EF /* WebViewController.swift */,
+				00062F50217C1979004045EF /* File.swift */,
 			);
 			path = CloudSightExample;
 			sourceTree = "<group>";
@@ -283,9 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67FEB28E1E7DCB290035AE4B /* LaunchScreen.storyboard in Resources */,
 				67FEB28B1E7DCB290035AE4B /* Assets.xcassets in Resources */,
 				67FEB2891E7DCB290035AE4B /* Main.storyboard in Resources */,
+				00062F53217C1A7A004045EF /* blink.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,9 +398,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00062F51217C1979004045EF /* File.swift in Sources */,
+				00062F55217C1FAC004045EF /* WebViewController.swift in Sources */,
 				2F53B372217A6BCA005992C7 /* ApiQuery.swift in Sources */,
 				67FEB2861E7DCB290035AE4B /* ViewController.swift in Sources */,
 				67FEB2841E7DCB290035AE4B /* AppDelegate.swift in Sources */,
+				00062F4F217C17F5004045EF /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,14 +445,6 @@
 				67FEB2881E7DCB290035AE4B /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		67FEB28C1E7DCB290035AE4B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67FEB28D1E7DCB290035AE4B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
