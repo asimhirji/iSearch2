@@ -6,11 +6,13 @@ import UIKit
 import CloudSight
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CloudSightQueryDelegate {
-
+    
+    
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var libraryButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var submitButton: UIButton!
-    
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var cloudsightQuery: CloudSightQuery!
@@ -18,6 +20,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.isHidden = true
+        
         
         CloudSightConnection.sharedInstance().consumerKey = "C38_disOS8RllVk3OQ5cDw";
         CloudSightConnection.sharedInstance().consumerSecret = "HAwGhA4TNmqOo0morWWYpA";
@@ -50,6 +54,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    @IBAction func libraryButtonPressed(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        
+        self.present(image, animated: true) {
+            
+        }
+        
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 // Local variable inserted by Swift 4.2 migrator.
 let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
@@ -74,6 +91,8 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         
         cloudsightQuery.start()
         submitButton.isHidden = true
+        cameraButton.isHidden = true
+        libraryButton.isHidden = true
         activityIndicatorView.startAnimating()
     }
     
@@ -157,32 +176,6 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
     func cloudSightQueryDidFinishIdentifying(_ query: CloudSightQuery!) {
         print("cloudSightQueryDidFinishIdentifying")
-        
-        let image :UIImage = UIImage(data: query.image!)!
-        let urlRequest = createUrlRequest(data: query.image! as NSData)
-        
-        let session = URLSession.shared
-        
-        
-        let task = session.dataTask(with: urlRequest) {
-            (data, response, error) in
-            guard error == nil else {
-                print("error calling POST on Azure's Computer Vision API")
-                print(error!)
-                return
-            }
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return
-            }
-            
-            // parse the result as JSON, since that's what the API provides
-            do {
-                guard let analyzedData = try JSONSerialization.jsonObject(with: responseData,
-                                                                          options: []) as? [String: Any] else {
-                                                                            print("Could not get JSON from responseData as dictionary")
-                                                                            return
-                }
                 //mark
                 // CloudSight runs in a background thread, and since we're only
                 // allowed to update UI in the main thread, let's make sure it does.
@@ -190,34 +183,20 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
                     //self.resultLabel.text = query.name()
                     print("CloudSight API result:")
                     print(query.name())
-                    print("Azure API result:")
-                    print(analyzedData)
                     
                     var label : String = query.name()
                     
-                    var count = 1
-                    
-                    for tag in analyzedData["tags"] as! [Any] {
-                        print("TAAAG")
-                        let parsedTag = tag as! NSDictionary
-                        if (parsedTag["confidence"] as! Float) >= 0.99 && count <= 3 {
-                            label += ", " + (parsedTag["name"] as! String)
-                            count = count + 1
-                        }
-                        }
                     
                     self.activityIndicatorView.stopAnimating()
                     self.resultLabel.text = label
                     self.submitButton.isHidden = false
+                    self.cameraButton.isHidden = false
+                    self.libraryButton.isHidden = false
+                    
+                    self.imageView.sendSubviewToBack(self.imageView)
+                    self.resultLabel.bringSubviewToFront(self.resultLabel)
                     
                 }
-                
-            } catch  {
-                print("error parsing response from POST on /todos")
-                return
-            }
-        }
-        task.resume()
         
     }
     

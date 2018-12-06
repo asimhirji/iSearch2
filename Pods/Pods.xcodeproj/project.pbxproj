@@ -108,16 +108,16 @@
 		07DE83B9405F2FDBAAAEBE3F4B682096 /* Pods-CloudSightExampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CloudSightExampleTests-umbrella.h"; sourceTree = "<group>"; };
 		0A4E60E5EC51CD0BDD591E0EB1F6A66E /* CloudSightImageResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CloudSightImageResponse.m; path = CloudSight/CloudSightImageResponse.m; sourceTree = "<group>"; };
 		0B8D9159A452CF6FC60751574679B5F5 /* Pods-CloudSightExampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CloudSightExampleTests.modulemap"; sourceTree = "<group>"; };
-		0F5DDFB4D75088F8E003C42D63508FEC /* CloudSight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CloudSight.framework; path = CloudSight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F5DDFB4D75088F8E003C42D63508FEC /* CloudSight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CloudSight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		123AA310B04C9309BCCAA5543B6937F0 /* Pods-CloudSightExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CloudSightExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1578E8EBAE46B76760F00740440B847F /* Pods-CloudSightExampleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CloudSightExampleTests-dummy.m"; sourceTree = "<group>"; };
 		1CF68ADD0DB998A27D8FAB57A96AFB05 /* Pods-CloudSightExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CloudSightExample-frameworks.sh"; sourceTree = "<group>"; };
 		1D744109074CD1C6D38795D27360024D /* CloudSightQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightQuery.h; path = CloudSight/CloudSightQuery.h; sourceTree = "<group>"; };
 		269C5BA59522D960F24C6126095BDEC4 /* Pods-CloudSightExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CloudSightExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
-		2835F366D9C8BBB77438E83C760AE82F /* BFOAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BFOAuth.framework; path = BFOAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2835F366D9C8BBB77438E83C760AE82F /* BFOAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFOAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE819239F3B703FE45B619A18DDBB6B /* Pods-CloudSightExampleUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CloudSightExampleUITests-resources.sh"; sourceTree = "<group>"; };
 		2FAC7012A0CEEE16F1D2B3AED1F0B771 /* Pods-CloudSightExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CloudSightExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		336DD10ADC9CE9F0568C8CF542E3DE94 /* Pods_CloudSightExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CloudSightExampleTests.framework; path = "Pods-CloudSightExampleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		336DD10ADC9CE9F0568C8CF542E3DE94 /* Pods_CloudSightExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudSightExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3429C180A582D67B4E79C4C5BDDA3E47 /* BFOAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BFOAuth-dummy.m"; sourceTree = "<group>"; };
 		347369E9B5944D45E8CB7A22B4E14672 /* CloudSightQueryDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightQueryDelegate.h; path = CloudSight/CloudSightQueryDelegate.h; sourceTree = "<group>"; };
 		403518B79EC35F6E26DCC36B996B7D06 /* Pods-CloudSightExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CloudSightExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		48AD56B2DAAC3EA0EF870FCC2AA63365 /* BFOAuth.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BFOAuth.xcconfig; sourceTree = "<group>"; };
 		4E06225A36EB2AD4EDC75E46504949A8 /* Pods-CloudSightExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CloudSightExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		578C8271FE272B58CF10E9D6A64336FD /* RequestUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RequestUtils.m; path = RequestUtils/RequestUtils.m; sourceTree = "<group>"; };
-		5A7F8845984189154E3541259BB728BC /* RequestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RequestUtils.framework; path = RequestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7F8845984189154E3541259BB728BC /* RequestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RequestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F262BC9D10EC40B8BDECADA3E7F4D4D /* CloudSightUploadProgressDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightUploadProgressDelegate.h; path = CloudSight/CloudSightUploadProgressDelegate.h; sourceTree = "<group>"; };
 		602673E50E78DAF070215BBB9D8A70C9 /* CloudSightImageRequestDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightImageRequestDelegate.h; path = CloudSight/CloudSightImageRequestDelegate.h; sourceTree = "<group>"; };
 		66D18F1DDB6B6EBFABFA8593EC1FDE08 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,14 +136,14 @@
 		6FE5182CC500CD95CC6E3A6C9879EE5C /* CloudSight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSight.h; path = CloudSight/CloudSight.h; sourceTree = "<group>"; };
 		86669F3AB01D65DD423672F68F712F8C /* CloudSightImageRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightImageRequest.h; path = CloudSight/CloudSightImageRequest.h; sourceTree = "<group>"; };
 		8963ECA9E509A39114F3A5A4B50D954C /* RequestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RequestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A23C914DEFB24540DE6706D7DE03635 /* Pods_CloudSightExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CloudSightExampleUITests.framework; path = "Pods-CloudSightExampleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A23C914DEFB24540DE6706D7DE03635 /* Pods_CloudSightExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudSightExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B72A6EBA71A15BC88E893B7BCCCA671 /* CloudSightQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CloudSightQuery.m; path = CloudSight/CloudSightQuery.m; sourceTree = "<group>"; };
 		8E90FC9EC6457A2ECF61B139EA4BCCE6 /* CloudSight.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CloudSight.modulemap; sourceTree = "<group>"; };
 		8F1418B9F9009610251ED7467F1B3333 /* CloudSightDelete.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudSightDelete.h; path = CloudSight/CloudSightDelete.h; sourceTree = "<group>"; };
 		90630D613E0EBD0A558D8D2D02C01486 /* Pods-CloudSightExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CloudSightExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		914BE28E6E9D6C5A43B025FA87821C39 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		930C02535744A8D957944C9F89A00A92 /* Pods-CloudSightExampleTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CloudSightExampleTests-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E5F65A58C59B8CEFBABDE0FD8FEF532 /* RequestUtils-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RequestUtils-dummy.m"; sourceTree = "<group>"; };
 		9F369BC7B9FF56834D1F6934F02CEE13 /* BFOAuth-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BFOAuth-prefix.pch"; sourceTree = "<group>"; };
 		A56CAC6F0B89D8FB1907F3EA49FDD510 /* BFOAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BFOAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +171,7 @@
 		D567BFEA0700693E538972BE835EC79A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D617FAA3BBBE5720CBE5FA43605633D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA963760BC3F82C8CD7AC957020FBC21 /* CloudSightImageRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CloudSightImageRequest.m; path = CloudSight/CloudSightImageRequest.m; sourceTree = "<group>"; };
-		DB6E113973C6BDD9D682BE764BA3345B /* Pods_CloudSightExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CloudSightExample.framework; path = "Pods-CloudSightExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB6E113973C6BDD9D682BE764BA3345B /* Pods_CloudSightExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudSightExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3C44CE602298DCD5397CB51290D151 /* Pods-CloudSightExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CloudSightExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DFB5E5B0F643108B4D49F1D535684530 /* CloudSight-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CloudSight-umbrella.h"; sourceTree = "<group>"; };
 		E545907E997968A29ACD2C421930B0F5 /* BFOAuth.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFOAuth.m; path = BFOAuth/BFOAuth.m; sourceTree = "<group>"; };
@@ -245,7 +245,6 @@
 				578C8271FE272B58CF10E9D6A64336FD /* RequestUtils.m */,
 				C16F66C0F5AA3BA6F9E0C7DE5E647F62 /* Support Files */,
 			);
-			name = RequestUtils;
 			path = RequestUtils;
 			sourceTree = "<group>";
 		};
@@ -270,7 +269,6 @@
 				E545907E997968A29ACD2C421930B0F5 /* BFOAuth.m */,
 				F4F8182AEB11533EF7AD9BA0D62CB259 /* Support Files */,
 			);
-			name = BFOAuth;
 			path = BFOAuth;
 			sourceTree = "<group>";
 		};
@@ -364,7 +362,6 @@
 				5F262BC9D10EC40B8BDECADA3E7F4D4D /* CloudSightUploadProgressDelegate.h */,
 				150099CE1F4B6353B1811DAA0F9652DF /* Support Files */,
 			);
-			name = CloudSight;
 			path = CloudSight;
 			sourceTree = "<group>";
 		};
